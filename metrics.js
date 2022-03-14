@@ -18,7 +18,7 @@ const web3_local = new Web3(Web3.givenProvider || localNodeWS);
 
 function localEthBlockHeightMetric(registry) {
     const gauge = new client.Gauge({
-        name: 'local_eth_block_height_test',
+        name: 'local_eth_block_height',
         help: 'Local node block height',
         registers: [registry],
     });
@@ -34,7 +34,7 @@ function localEthBlockHeightMetric(registry) {
 
 function ethBlockHeightMetric(registry) {
     const gauge = new client.Gauge({
-        name: 'eth_block_height_test',
+        name: 'eth_block_height',
         help: 'External node block height',
         registers: [registry],
     });
@@ -50,7 +50,7 @@ function ethBlockHeightMetric(registry) {
 
 function orchestratorETHBalanceMetric(registry) {
     const gauge = new client.Gauge({
-        name: 'orchestrator_eth_balance_test',
+        name: 'orchestrator_eth_balance',
         help: 'Orchestrator ETH balance',
         registers: [registry],
     });
@@ -67,7 +67,7 @@ function orchestratorETHBalanceMetric(registry) {
 
 function orchestratorUmeeBalanceMetric(registry) {
     const gauge = new client.Gauge({
-        name: 'orchestrator_umee_balance_test',
+        name: 'orchestrator_umee_balance',
         help: 'Orchestrator ETH balance',
         registers: [registry],
     });
@@ -95,7 +95,7 @@ function orchestratorUmeeBalanceMetric(registry) {
 
 function umeeVersionMetric(registry) {
     const gauge = new client.Gauge({
-        name: 'umee_version_test',
+        name: 'umee_version',
         help: 'umeed version',
         registers: [registry],
     });
@@ -131,8 +131,8 @@ function umeeVersionMetric(registry) {
 
 function peggoVersionMetric(registry) {
     const gauge = new client.Gauge({
-        name: 'peggo_version_test',
-        help: 'umeed version',
+        name: 'peggo_version',
+        help: 'peggo version',
         registers: [registry],
     });
 
@@ -167,7 +167,7 @@ function peggoVersionMetric(registry) {
 
 function peggoSynсMetric(registry) {
     const gauge = new client.Gauge({
-        name: 'peggo_sync_test',
+        name: 'peggo_sync',
         help: 'Peggo checker',
         registers: [registry],
     });

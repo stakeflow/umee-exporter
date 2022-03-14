@@ -23,6 +23,6 @@ node install.js
 
 ##### Step 3: Run the app in development mode with pm2
 ```shell
-pm2 start config.js
+pm2 start ecosystem.config.js
 ```
 
