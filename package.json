@@ -1,0 +1,21 @@
+{
+    "name": "umee-exporter",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node ./index.js"
+    },
+    "author": "Genesis Lab <team@genesislab.net>",
+    "license": "",
+    "dependencies": {
+        "axios": "^0.26.0",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "prom-client": "^11.5.3",
+        "web3": "^1.7.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.10.0"
+    }
+}
