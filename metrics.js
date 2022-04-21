@@ -185,22 +185,21 @@ function peggoSynсMetric(registry) {
                 });
             }
 
-            let maxNonce = 0;
             let ownNonce = 0;
-            for (const item of orchAddresses) {
+            let orchNonces = [];
+            for (let item of orchAddresses) {
                 await axios.get(peggoApi + "/gravity/v1beta/oracle/eventnonce/" + item).then(response => {
                     if (item == orchestratorUmeeAddress) {
                         ownNonce = response.data.event_nonce;
                     }
-                    if (response.data.event_nonce > maxNonce) {
-                        maxNonce = response.data.event_nonce;
-                    }
+                    orchNonces.push(response.data.event_nonce);
                 }).catch(err => {
                     console.log(err.message);
                     gauge.set(10000);
                 });
             }
-            
+
+            let maxNonce = Math.max(...orchNonces);
             let delta = maxNonce - ownNonce;
             gauge.set(delta);
         }).catch(err => {
@@ -209,7 +208,7 @@ function peggoSynсMetric(registry) {
         });
     }
 
-    setInterval(collectPeggoSynс, 600000);
+    setInterval(collectPeggoSynс, 60000);
 }
 
 
